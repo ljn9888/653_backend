@@ -1,14 +1,15 @@
 
 var msg;
 var express = require('express');
+// var cors = require('cors');
 var app = express();
 const { spawn } = require('child_process');
-const ls = spawn('python3', ['fuzz.py', 'https://uwaterloo.ca/coronavirus']);
+const ls = spawn('python3', ['fuzz.py', 'https://uwaterloo.ca']);
 var data
 
 
 var str;
-
+// app.use(cors())
 ls.stdout.on('data', (data) => {
   console.log(`${data}`)
   str = `${data}`
@@ -17,9 +18,10 @@ ls.stdout.on('data', (data) => {
 
 
 app.get('/', function (req, res) {
+  // console.log(req.body);
   // console.log(msg);
   //  res.send('Hello Worssssld');
-
+  res.setHeader('Access-Control-Allow-Origin', '*');
  res.send(str);
 })
  
