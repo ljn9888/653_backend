@@ -12,7 +12,7 @@ app.all('/', function (req, res) {
   res.setHeader('Access-Control-Allow-Origin', '*');
   // res.setHeader('Access-Control-Allow-Methods', 'GET', 'POST', 'OPTIONS');
   res.setHeader('Access-Control-Allow-Headers', '*');
- res.send('hehee');
+ res.send('hehe   e');
 })
 
 app.all('/sendurl',     (req, res)=> {
