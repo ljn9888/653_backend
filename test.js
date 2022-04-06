@@ -15,7 +15,7 @@ app.all('/', function (req, res) {
  res.send('hehee');
 })
 
-app.all('/sendurl',  (req, res)=> {
+app.all('/sendurl',     (req, res)=> {
   // console.log(req.body);
   // console.log(msg);
   //  res.send('Hello Worssssld');
